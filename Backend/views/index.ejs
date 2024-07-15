@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Recommendation</title>
+</head>
+<body>
+    <h1>Enter Product Details for Recommendation</h1>
+    <form action="/recommend" method="post">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+        </select>
+        <br><br>
+
+        <label for="masterCategory">Master Category:</label>
+        <select id="masterCategory" name="masterCategory">
+            <option value="Apparel">Apparel</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Personal Care">Personal Care</option>
+            <option value="Free Items">Free Items</option>
+            <option value="Sporting Goods">Sporting Goods</option>
+        </select>
+        <br><br>
+
+        <label for="subCategory">Sub Category:</label>
+        <select id="subCategory" name="subCategory">
+            <option value="Topwear">Topwear</option>
+            <option value="Bottomwear">Bottomwear</option>
+            <option value="Innerwear">Innerwear</option>
+            <option value="Saree">Saree</option>
+            <option value="Dress">Dress</option>
+            
+        </select>
+        <br><br>
+
+        <label for="articleType">Article Type:</label>
+        <select id="articleType" name="articleType">
+            <option value="Tshirts">Tshirts</option>
+            <option value="Shirts">Shirts</option>
+            <option value="Jeans">Jeans</option>
+            <option value="Shorts">Shorts</option>
+            <option value="Trousers">Trousers</option>
+            
+        </select>
+        <br><br>
+
+        <label for="season">Season:</label>
+        <select id="season" name="season">
+            <option value="Summer">Summer</option>
+            <option value="Winter">Winter</option>
+            <option value="Spring">Spring</option>
+            <option value="Fall">Fall</option>
+        </select>
+        <br><br>
+
+        <label for="usage">Usage:</label>
+        <select id="usage" name="usage">
+            <option value="Casual">Casual</option>
+            <option value="Formal">Formal</option>
+            <option value="Sports">Sports</option>
+            <option value="Party">Party</option>
+        </select>
+        <br><br>
+
+        <label for="productDisplayName">Product Display Name:</label>
+        <input type="text" id="productDisplayName" name="productDisplayName" placeholder="Printed Round Neck T-Shirt" required>
+        <br><br>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h1>Chat Zone</h1>
+    <div id="container">
+        <div id="contact-box">
+           
+            <div class="contact" id="contact1">
+              <span><img src="css/user.png"><h3>Friend1</h3></span>
+            </div>
+           
+        </div>
+        <div id="chat-box">
+            <div id="chat-messages">
+               
+            </div>
+            <form id="form" action="">
+                <input id="input" autocomplete="off" type="text" placeholder="Type a message...">
+                <button>Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('chat message', input.value);
+                input.value = '';
+            }
+        });
+
+        socket.on('chat message', function(msg) {
+            const messageElem = document.createElement('div');
+            messageElem.classList.add('message');
+            messageElem.textContent = msg;
+            chatMessages.appendChild(messageElem);
+            chatMessages.scrollTop = chatMessages.scrollHeight; 
+        });
+    </script>
+</body>
+</html>
